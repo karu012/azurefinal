@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <span>Flight Price Prediction</span>
+        <div class="nav-buttons">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'predict' %}">Predict</a>
+        </div>
+    </div>
+
+    {% if price or error %}
+        <!-- Prediction Result -->
+        <div class="result-container">
+            {% if price %}
+                <div class="prediction-result">
+                    <h2>Estimated Flight Price</h2>
+                    <p>₹{{ price }}</p>
+                </div>
+            {% elif error %}
+                <div class="error-message">
+                    <h2>Error</h2>
+                    <p>{{ error }}</p>
+                </div>
+            {% endif %}
+
+            <!-- "Check Another Price" Button -->
+            <div class="back-container">
+                <a href="{% url 'predict' %}" class="back-button">Check Another Price</a>
+            </div>
+        </div>
+    {% else %}
+        <!-- Prediction Form -->
+        <div class="form-container">
+            <h2>Enter Flight Details</h2>
+            <form action="{% url 'predict' %}" method="POST">
+                {% csrf_token %}
+
+                <label for="airline">Airline:</label>
+                <select id="airline" name="airline" required>
+                    <option value="Jet Airways">Jet Airways</option>
+                    <option value="IndiGo">IndiGo</option>
+                    <option value="Air India">Air India</option>
+                    <option value="Multiple carriers">Multiple Carriers</option>
+                    <option value="SpiceJet">SpiceJet</option>
+                    <option value="Vistara">Vistara</option>
+                    <option value="GoAir">GoAir</option>
+                    <option value="Multiple carriers Premium economy">Multiple Carriers Premium Economy</option>
+                    <option value="Trujet">Trujet</option>
+                </select>
+
+                <label for="dep_date">Departure Date:</label>
+                <input type="date" id="dep_date" name="dep_date" required>
+
+                <label for="dep_time">Departure Time:</label>
+                <input type="time" id="dep_time" name="dep_time" required>
+
+                <label for="arrival_time">Arrival Time:</label>
+                <input type="time" id="arrival_time" name="arrival_time" required>
+
+                <label for="source">Source:</label>
+                <select id="source" name="source" required>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">Chennai</option>
+                </select>
+
+                <label for="destination">Destination:</label>
+                <select id="destination" name="destination" required>
+                    <option value="Cochin">Cochin</option>
+                    <option value="Banglore">Bangalore</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="New Delhi">New Delhi</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                </select>
+
+                <label for="stops">Stoppage:</label>
+                <select id="stops" name="stops" required>
+                    <option value="0 - Non-Stop">Non-Stop</option>
+                    <option value="1 - One Stop">One Stop</option>
+                    <option value="2 - Two Stops">Two Stops</option>
+                    <option value="3 - Three Stops">Three Stops</option>
+                </select>
+
+                <button type="submit">Predict</button>
+            </form>
+        </div>
+    {% endif %}
+
+    <!-- JavaScript for Date Restriction -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let today = new Date();
+            today.setDate(today.getDate() + 1); // Restrict past dates
+
+            let minDate = today.toISOString().split("T")[0]; 
+            let maxDate = "2026-12-31"; // Allow dates only up to 2026
+
+            let dateInput = document.getElementById("dep_date"); 
+            if (dateInput) {
+                dateInput.setAttribute("min", minDate);
+                dateInput.setAttribute("max", maxDate);
+            }
+        });
+    </script>
+
+</body>
+</html>

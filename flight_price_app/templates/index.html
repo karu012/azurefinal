@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>Flight Price Prediction</h2>
+        <div class="nav-buttons">
+            <a href="/">Home</a>
+            <a href="/predict/">Predict</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Welcome to Flight Price Predictor</h1>
+        <p>Plan smarter, travel better! Get real-time flight fare estimates based on your travel details.</p>
+    
+
+    <!-- JavaScript for date restriction -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let today = new Date();
+            today.setDate(today.getDate() + 1); // Set min to tomorrow
+
+            let minDate = today.toISOString().split("T")[0]; 
+            let maxDate = "2026-12-31"; // Restrict to 2025 and 2026
+
+            document.getElementById("dep_date").setAttribute("min", minDate);
+            document.getElementById("dep_date").setAttribute("max", maxDate);
+        });
+    </script>
+
+</body>
+</html>

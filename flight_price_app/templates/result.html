@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicted Price</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="Main">
+        <h3><a href="{% url 'home' %}">Flight Price Predictor</a></h3>
+        <ul id="navbar">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'predict' %}">Predict Again</a></li>
+        </ul>
+    </nav>
+
+    <!-- Prediction Result -->
+    <div class="result-box">
+        <h2>Predicted Flight Price</h2>
+        <p>₹{{ price }}</p>
+    </div>
+
+    <!-- Footer -->
+    <footer id="Footer">
+        <div class="footer">
+            <h3>Flight Price Predictor</h3>
+            <p>© 2025 | Developed by Your Name</p>
+        </div>
+    </footer>
+
+</body>
+</html>
