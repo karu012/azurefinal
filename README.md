@@ -32,3 +32,7 @@ Dataset sourced from Kaggle. It includes features like airline, departure time, 
 
  Accuracy: R² = 0.85 using RandomizedSearchCV
 
+5.Website preview
+ ![Image Alt]()
+![Image Alt]()
+![Image Alt]()
