@@ -33,6 +33,6 @@ Dataset sourced from Kaggle. It includes features like airline, departure time, 
  Accuracy: R² = 0.85 using RandomizedSearchCV
 
 5.Website preview
- ![Image Alt]()
+ ![Image Alt](https://github.com/karu012/airline_fare_prediction/blob/212e4a94722bdc585ab58734f7f22195f80b6198/Screenshot%202025-04-21%20201545.png)
 ![Image Alt]()
 ![Image Alt]()
