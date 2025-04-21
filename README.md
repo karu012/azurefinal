@@ -35,4 +35,4 @@ Dataset sourced from Kaggle. It includes features like airline, departure time, 
 5.Website preview
  ![Image Alt](https://github.com/karu012/airline_fare_prediction/blob/212e4a94722bdc585ab58734f7f22195f80b6198/Screenshot%202025-04-21%20201545.png)
 ![Image Alt](https://github.com/karu012/airline_fare_prediction/blob/91407e72a69d66e9976f07e93ddfafbfbe5ad7b2/Screenshot%202025-04-21%20201710.png)
-![Image Alt]()
+![Image Alt](https://github.com/karu012/airline_fare_prediction/blob/2e207466aa0160f90e1e590311d0cdaa2ff59aed/Screenshot%202025-04-21%20201824.jpg)
