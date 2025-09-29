@@ -1,4 +1,4 @@
-Django==5.1.7
+django
 gunicorn
 numpy
 pandas
@@ -10,3 +10,5 @@ matplotlib
 seaborn
 streamlit
 requests
+django.shortcuts
+pathlib
