@@ -1,4 +1,5 @@
-flask
+django
+gunicorn
 scikit-learn
 pandas
 numpy
