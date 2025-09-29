@@ -1,5 +1,6 @@
-django
+Django>=4.2
 gunicorn
+flask
 scikit-learn
 pandas
 numpy
