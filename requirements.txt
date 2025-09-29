@@ -12,3 +12,4 @@ streamlit
 requests
 django.shortcuts
 pathlib
+os
